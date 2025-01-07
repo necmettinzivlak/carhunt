@@ -174,6 +174,7 @@ export default function Home() {
 
     return (
       <div className="game-container">
+        <SpeedInsights />
         <div className="min-h-screen flex items-center justify-center p-4">
           <div className="game-card text-center max-w-2xl w-full animate-slideIn">
             <div
