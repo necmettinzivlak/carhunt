@@ -574,7 +574,7 @@ export const carData: Car[] = [
   {
     id: 20,
     brandName: "hyundai",
-    modelName: "elantra",
+    modelName: "elentra",
     year: 2023,
     brandPoints: {
       base: 10,
