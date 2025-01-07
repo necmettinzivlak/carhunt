@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Lexend:wght@100..900&family=Moo+Lah+Lah&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -130,9 +130,8 @@
       #3b82f6 75%,
       #4f46e5 100%
     );
-    font-family: "Lexend Peta", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
+    font-family: "Moo Lah Lah", serif;
+    font-weight: 400;
     font-style: normal;
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -142,7 +141,7 @@
   }
   .card-header {
     @apply pb-4 md:pb-8;
-    @apply font-bold relative  ;
+    @apply font-bold relative;
     @apply text-lg sm:text-xl md:text-3xl; /* Ekran boyutuna göre yazı boyutunu ayarlayın */
     background: linear-gradient(
       90deg,
