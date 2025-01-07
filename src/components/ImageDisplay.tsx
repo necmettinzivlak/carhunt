@@ -73,7 +73,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
               }`}
               disabled={currentPartIndex === carData.images.parts.length - 1}
             >
-              Sonraki 
+              Sonraki →
             </button>
           </div>
         </div>
