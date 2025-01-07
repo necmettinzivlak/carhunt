@@ -123,12 +123,14 @@ export default function Home() {
   };
 
   const getScoreMessage = (score: number): string => {
-    if (score < 200) return "Üzülme her gencin başına gelir";
-    if (score < 400) return "Ortamda hava atacak kadar bilgin var";
-    if (score < 600) return "Güzel bir başlangıç";
-    if (score < 800) return "Efsane! Sen bir Araba Gurmesisin!";
-    if (score >= 800) return "Efsanevi! Doğan Kabak mısın be!";
-    return "";
+    if (score >= 1000) return "🏆 Efsanevi! Doğan Kabak mısın be!";
+    if (score < 200) return "🙈 Bisiklette bir ulaşım aracı";
+    if (score < 400) return "📝 Boş bir sayfaya araba markalarını 500 kere yaz";
+    if (score < 600)
+      return "💼 Ortamda biraz hava atabilirsin, ama daha fazla bilgi şart!";
+    if (score < 800)
+      return "🌟 Süpersin! Araba sohbetlerinde artık herkes seni dinler!";
+    return "🚗 Skorun harika! Sen bu işi çözmüşsün!";
   };
 
   if (isGameComplete) {
