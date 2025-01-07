@@ -141,7 +141,8 @@
     animation: textGradient 3s linear infinite;
   }
   .card-header {
-    @apply text-4xl font-bold relative;
+    @apply font-bold relative mb-4 md:mb-8;
+    @apply text-lg sm:text-xl md:text-3xl; /* Ekran boyutuna göre yazı boyutunu ayarlayın */
     background: linear-gradient(
       90deg,
       #4f46e5 0%,
@@ -150,7 +151,6 @@
       #3b82f6 75%,
       #4f46e5 100%
     );
-
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;

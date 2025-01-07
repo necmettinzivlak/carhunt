@@ -44,36 +44,36 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
           onLoad={() => {}}
         />
         {!showFullImage && (
-          <div className="absolute top-2 right-2 bg-blue-500/50 text-white text-sm px-2 py-1 rounded">
+          <div className="absolute top-2 right-2 bg-blue-500/50 text-white text-xs md:text-sm px-2 py-1 rounded">
             Her bir parça -15 Puan
           </div>
         )}
       </div>
       {!showFullImage && !isModelGuessed && (
-        <div className="absolute bottom-4 left-0 right-0 px-4 z-20">
-          <div className="flex justify-between items-center gap-4 bg-black/20 backdrop-blur-sm p-2 rounded-lg">
+        <div className="absolute bottom-4 left-0 right-0 px-2 md:px-4 z-20">
+          <div className="flex justify-between items-center gap-2 md:gap-4 bg-black/20 backdrop-blur-sm p-1 md:p-2 rounded-lg">
             <button
               onClick={showPreviousPart}
-              className={`btn btn-primary z-30 ${
+              className={`btn btn-primary z-30 text-xs md:text-sm ${
                 currentPartIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={currentPartIndex === 0}
             >
               ← Önceki
             </button>
-            <span className="text-sm font-medium text-white bg-black/40 px-3 py-1 rounded-full">
+            <span className="font-medium text-xs md:text-sm text-white bg-black/40 px-2 md:px-3 py-1 rounded-full">
               {currentPartIndex + 1} / {carData.images.parts.length}
             </span>
             <button
               onClick={showNextPart}
-              className={`btn btn-primary z-30 ${
+              className={`btn btn-primary text-xs md:text-sm z-30 ${
                 currentPartIndex === carData.images.parts.length - 1
                   ? "opacity-50 cursor-not-allowed"
                   : ""
               }`}
               disabled={currentPartIndex === carData.images.parts.length - 1}
             >
-              Sonraki →
+              Sonraki 
             </button>
           </div>
         </div>

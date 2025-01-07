@@ -197,9 +197,9 @@ const GameCard: React.FC<GameCardProps> = ({
     : carData.images.parts[currentPartIndex];
 
   return (
-    <div className="card p-8">
+    <div className="card p-2 md:p-8">
       <div className="text-center">
-        <h2 className="card-header mb-8">Arabayı Tahmin Et</h2>
+        <span className="card-header  ">Arabayı Tahmin Et</span>
 
         <div className="flex flex-col md:flex-row gap-8">
           <ImageDisplay

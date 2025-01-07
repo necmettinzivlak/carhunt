@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import GameCard from "@/components/GameCard";
 import { carData } from "@/data/carData";
 import { Car } from "@/types/car";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   const [currentLevel, setCurrentLevel] = useState(1);
@@ -346,7 +347,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm py-4 shadow-lg">
+      <footer className="bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm py-4 shadow-lg md:fixed">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center gap-6">
             <a
