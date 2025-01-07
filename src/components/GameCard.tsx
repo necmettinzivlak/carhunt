@@ -199,7 +199,9 @@ const GameCard: React.FC<GameCardProps> = ({
   return (
     <div className="card p-2 md:p-8">
       <div className="text-center">
-        <span className="card-header  ">Arabayı Tahmin Et</span>
+        <div className="flex justify-center items-center gap-6">
+          <span className="card-header">Arabayı Tahmin Et</span>
+        </div>
 
         <div className="flex flex-col md:flex-row gap-8">
           <ImageDisplay
