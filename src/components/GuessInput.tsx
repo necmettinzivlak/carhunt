@@ -95,12 +95,12 @@ const GuessInput: React.FC<GuessInputProps> = ({
           {guessType === "brand" ? "Marka Tahmini" : "Model Tahmini"}
         </p>
         {suggestions.length > 0 && (
-          <ul className="bg-white border border-gray-300 rounded-md shadow-lg z-10 w-40 text-sm">
+          <ul className=" bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-10 w-40 text-sm">
             {suggestions.map((suggestion) => (
               <li
                 key={suggestion}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="px-2 py-1 cursor-pointer hover:bg-gray-100"
+                className="px-2 py-1 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"
               >
                 {suggestion}
               </li>
