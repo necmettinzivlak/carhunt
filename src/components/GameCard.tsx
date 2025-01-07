@@ -174,18 +174,6 @@ const GameCard: React.FC<GameCardProps> = ({
     }
   };
 
-  const handleKeyPress = (
-    event: React.KeyboardEvent<HTMLInputElement>,
-    guessType: "brand" | "model"
-  ) => {
-    if (event.key === "Enter") {
-      if (guessType === "brand") {
-        handleBrandGuess();
-      } else if (guessType === "model") {
-        handleModelGuess();
-      }
-    }
-  };
 
   const currentImage = showFullImage
     ? carData.images.full

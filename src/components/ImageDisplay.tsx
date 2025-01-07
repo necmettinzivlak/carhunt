@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface ImageDisplayProps {
@@ -31,7 +32,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
         <div className="animate-glow rounded-full h-12 w-12 border-4 border-indigo-500 border-t-transparent animate-spin"></div>
       </div>
       <div className="relative w-full h-full">
-        <img
+        <Image 
           key={currentImage}
           src={currentImage}
           alt={showFullImage ? 'Araç tam görünüm' : 'Araba parçası'}

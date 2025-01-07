@@ -40,7 +40,7 @@ const HintList: React.FC<HintListProps> = ({
                   <span className="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-100 mr-2 group-hover:bg-indigo-200 transition-colors duration-300 text-indigo-600">
                     {index + 1}
                   </span>
-                  İpucu {index + 1}'i Göster
+                  İpucu {index + 1}&apos;i Göster
                 </span>
               </button>
             )}
