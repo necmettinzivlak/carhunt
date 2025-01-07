@@ -86,6 +86,16 @@ const GameCard: React.FC<GameCardProps> = ({
     setIsImageLoading(!imageCache[currentImageSrc]);
   }, [currentPartIndex, showFullImage, imageCache, carData.images]);
 
+  useEffect(() => {
+    if (messageType === "success") {
+      const successSound = new Audio("/sounds/success.mp3");
+      successSound.play();
+    } else if (messageType === "error") {
+      const errorSound = new Audio("/sounds/error.mp3");
+      errorSound.play();
+    }
+  }, [messageType]);
+
   const calculateBrandPoints = () => {
     // Marka için maksimum 40 puan
     return Math.floor(remainingPoints * 0.4);
@@ -111,10 +121,14 @@ const GameCard: React.FC<GameCardProps> = ({
       setMessageType("success");
       setIsBrandGuessed(true);
       onCorrectGuess(points, false);
+      const successSound = new Audio("/sounds/success.mp3");
+      successSound.play();
     } else {
       setMessage(getRandomWrongGuessMessage());
       setMessageType("error");
       onWrongGuess();
+      const errorSound = new Audio("/sounds/error.mp3");
+      errorSound.play();
     }
   };
 
@@ -129,10 +143,14 @@ const GameCard: React.FC<GameCardProps> = ({
       setShowFullImage(true);
       setIsModelGuessed(true);
       onCorrectGuess(points, true);
+      const successSound = new Audio("/sounds/success.mp3");
+      successSound.play();
     } else {
       setMessage(getRandomWrongGuessMessage());
       setMessageType("error");
       onWrongGuess();
+      const errorSound = new Audio("/sounds/error.mp3");
+      errorSound.play();
     }
   };
 
@@ -173,7 +191,6 @@ const GameCard: React.FC<GameCardProps> = ({
       setCurrentPartIndex((prev) => prev - 1);
     }
   };
-
 
   const currentImage = showFullImage
     ? carData.images.full

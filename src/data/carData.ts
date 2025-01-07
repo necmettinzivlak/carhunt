@@ -348,7 +348,7 @@ export const carData: Car[] = [
     },
     hints: [
       "Büyük ızgara tasarımıyla dikkat çekiyor",
-      "3 serisi coupe versiyonu",
+      "Turboşarjlı motor seçenekleri mevcut",
       "Gran Coupe versiyonu 4 kapılı",
     ],
     images: {

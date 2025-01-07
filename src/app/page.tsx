@@ -1,7 +1,6 @@
 "use client";
 
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import GameCard from "@/components/GameCard";
 import { carData } from "@/data/carData";
 import { Car } from "@/types/car";
@@ -17,6 +16,8 @@ export default function Home() {
     [...carData].sort(() => Math.random() - 0.5).slice(0, 10)
   );
   const [themeIcon, setThemeIcon] = useState("🌜");
+  const [playerName, setPlayerName] = useState("");
+  const [isNameEntered, setIsNameEntered] = useState(false);
 
   useEffect(() => {
     const car = selectedCars[currentLevel - 1];
@@ -33,7 +34,9 @@ export default function Home() {
 
   useEffect(() => {
     const htmlElement = document.documentElement;
-    const currentTheme = htmlElement.classList.contains("dark") ? "dark" : "light";
+    const currentTheme = htmlElement.classList.contains("dark")
+      ? "dark"
+      : "light";
     setThemeIcon(currentTheme === "dark" ? "🌞" : "🌜");
   }, []);
 
@@ -73,24 +76,217 @@ export default function Home() {
     window.location.reload(); // Sayfayı yeniden yükle
   };
 
+  const handleDownloadCertificate = () => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = 1200;
+    canvas.height = 800;
+
+    if (ctx) {
+      // Arka plan
+      ctx.fillStyle = "#f3f4f6";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Kenarlık
+      ctx.strokeStyle = "#4f46e5";
+      ctx.lineWidth = 20;
+      ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+      // Başlık
+      ctx.font = 'bold 60px "Lexend Peta", sans-serif';
+      ctx.fillStyle = "#4f46e5";
+      ctx.textAlign = "center";
+      ctx.fillText("Başarı Sertifikası", canvas.width / 2, 150);
+
+      // İsim
+      ctx.font = 'bold 40px "Lexend", sans-serif';
+      ctx.fillStyle = "#1f2937";
+      ctx.fillText(playerName, canvas.width / 2, 300);
+
+      // Skor ve seviye mesajı
+      ctx.font = '30px "Lexend", sans-serif';
+      ctx.fillText(`Toplam Puan: ${score}`, canvas.width / 2, 400);
+      ctx.fillText(getScoreMessage(score), canvas.width / 2, 450);
+
+      // Tarih
+      const date = new Date().toLocaleDateString("tr-TR");
+      ctx.font = '25px "Lexend", sans-serif';
+      ctx.fillText(date, canvas.width / 2, 600);
+
+      // Sertifikayı indir
+      const link = document.createElement("a");
+      link.download = `${playerName}_sertifika.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }
+  };
+
+  const getScoreMessage = (score: number): string => {
+    if (score < 200) return "Üzülme her gencin başına gelir";
+    if (score < 400) return "Ortamda hava atacak kadar bilgin var";
+    if (score < 600) return "Güzel bir başlangıç";
+    if (score < 800) return "Efsane! Sen bir Araba Gurmesisin!";
+    if (score >= 800) return "Efsanevi! Doğan Kabak mısın be!";
+    return "";
+  };
+
   if (isGameComplete) {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-4 dark:bg-gray-900 bg-white">
-        <div className="card p-8 text-center max-w-lg w-full animate-slideIn">
-          <div className="relative inline-block mb-6">
-            <h1 className="game-header text-5xl">Tebrikler! 🎉</h1>
-            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-lg opacity-10 animate-glow filter blur-xl"></div>
+    if (!isNameEntered) {
+      return (
+        <div className="game-container">
+          <div className="min-h-screen flex items-center justify-center p-4">
+            <div className="game-card text-center max-w-md w-full animate-slideIn">
+              <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">
+                Tebrikler! 🎉
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-8">
+                Sertifikanı indirmek için adını gir
+              </p>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  value={playerName}
+                  onChange={(e) => setPlayerName(e.target.value)}
+                  placeholder="Adını gir..."
+                  className="input w-full text-center text-lg"
+                  onKeyPress={(e) =>
+                    e.key === "Enter" &&
+                    playerName.trim() &&
+                    setIsNameEntered(true)
+                  }
+                />
+                <button
+                  onClick={() => playerName.trim() && setIsNameEntered(true)}
+                  className="btn btn-primary w-full"
+                  disabled={!playerName.trim()}
+                >
+                  Devam Et
+                </button>
+              </div>
+            </div>
           </div>
-          <p className="text-gray-600 mb-4">Tüm seviyeleri tamamladınız!</p>
-          <p className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent mb-8">
-            Final Skorunuz: {score}
-          </p>
-          <button
-            onClick={handleRestart}
-            className="btn btn-primary w-full group relative"
-          >
-            <span className="relative z-10">Yeniden Başla</span>
-          </button>
+        </div>
+      );
+    }
+
+    return (
+      <div className="game-container">
+        <div className="min-h-screen flex items-center justify-center p-4">
+          <div className="game-card text-center max-w-2xl w-full animate-slideIn">
+            <div
+              id="certificate"
+              className="relative p-8 rounded-xl bg-gradient-to-br from-indigo-50 to-sky-50 dark:from-indigo-900/50 dark:to-sky-900/50 border-8 border-double border-indigo-200 dark:border-indigo-700"
+            >
+              <div className="absolute top-0 left-0 w-full h-full">
+                <svg
+                  className="w-full h-full opacity-5"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                >
+                  <pattern
+                    id="pattern-circles"
+                    x="0"
+                    y="0"
+                    width="10"
+                    height="10"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="2"
+                      fill="currentColor"
+                      className="text-indigo-500"
+                    />
+                  </pattern>
+                  <rect
+                    x="0"
+                    y="0"
+                    width="100"
+                    height="100"
+                    fill="url(#pattern-circles)"
+                  />
+                </svg>
+              </div>
+
+              <div className="relative">
+                <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+                  CARHUNT
+                </div>
+                <div className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Başarı Sertifikası
+                </div>
+                <div className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+                  {playerName}
+                </div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-indigo-400 dark:to-sky-400 bg-clip-text text-transparent mb-2">
+                  {getScoreMessage(2000)}
+                </div>
+                <div className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+                  Final Skorun
+                </div>
+                <div className="text-6xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">
+                  {score}
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                  10 farklı arabayı tanıyarak bu başarıya ulaştın!
+                </div>
+                <div className="text-sm text-gray-400 dark:text-gray-500">
+                  {new Date().toLocaleDateString("tr-TR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-4 mt-8">
+              <button
+                onClick={handleDownloadCertificate}
+                className="btn btn-primary flex-1 group"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg>
+                  Sertifikayı İndir
+                </span>
+              </button>
+              <button
+                onClick={handleRestart}
+                className="btn btn-secondary flex-1 group"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  Yeniden Başla
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );

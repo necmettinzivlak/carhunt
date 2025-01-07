@@ -150,7 +150,7 @@
       #3b82f6 75%,
       #4f46e5 100%
     );
-  
+
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -200,6 +200,14 @@
     top: 50%;
     transform: translateY(-50%);
     color: #888;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

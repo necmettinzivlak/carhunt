@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 interface ImageDisplayProps {
   currentImage: string;
@@ -26,18 +26,20 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
     <div className="w-full md:w-2/3 aspect-video bg-gray-50/80 rounded-xl overflow-hidden relative group">
       <div
         className={`absolute inset-0 bg-white flex items-center justify-center z-10 transition-opacity duration-300 ${
-          isImageLoading ? 'opacity-100' : 'opacity-0'
+          isImageLoading ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="animate-glow rounded-full h-12 w-12 border-4 border-indigo-500 border-t-transparent animate-spin"></div>
       </div>
       <div className="relative w-full h-full">
-        <Image 
-          key={currentImage}
+        <Image
           src={currentImage}
-          alt={showFullImage ? 'Araç tam görünüm' : 'Araba parçası'}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
-            isImageLoading ? 'opacity-0' : 'opacity-100'
+          key={currentImage}
+          width={1000}
+          height={1000}
+          alt={showFullImage ? "Araç tam görünüm" : "Araba parçası"}
+          className={`object-cover transition-opacity duration-500 ${
+            isImageLoading ? "opacity-0" : "opacity-100"
           }`}
           onLoad={() => {}}
         />
@@ -53,7 +55,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
             <button
               onClick={showPreviousPart}
               className={`btn btn-primary z-30 ${
-                currentPartIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
+                currentPartIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={currentPartIndex === 0}
             >
@@ -66,8 +68,8 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({
               onClick={showNextPart}
               className={`btn btn-primary z-30 ${
                 currentPartIndex === carData.images.parts.length - 1
-                  ? 'opacity-50 cursor-not-allowed'
-                  : ''
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
               }`}
               disabled={currentPartIndex === carData.images.parts.length - 1}
             >
