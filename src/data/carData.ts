@@ -3,8 +3,8 @@ import { Car } from "@/types/car";
 export const carData: Car[] = [
   {
     id: 1,
-    brandName: "Audi",
-    modelName: "A3",
+    brandName: "audi",
+    modelName: "a3",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -33,8 +33,8 @@ export const carData: Car[] = [
   },
   {
     id: 2,
-    brandName: "Audi",
-    modelName: "A4",
+    brandName: "audi",
+    modelName: "a4",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -63,8 +63,8 @@ export const carData: Car[] = [
   },
   {
     id: 3,
-    brandName: "Audi",
-    modelName: "A5",
+    brandName: "audi",
+    modelName: "a5",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -93,8 +93,8 @@ export const carData: Car[] = [
   },
   {
     id: 4,
-    brandName: "Audi",
-    modelName: "A6",
+    brandName: "audi",
+    modelName: "a6",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -123,8 +123,8 @@ export const carData: Car[] = [
   },
   {
     id: 5,
-    brandName: "Audi",
-    modelName: "E-tron",
+    brandName: "audi",
+    modelName: "e-tron",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -153,8 +153,8 @@ export const carData: Car[] = [
   },
   {
     id: 6,
-    brandName: "Audi",
-    modelName: "Q3",
+    brandName: "audi",
+    modelName: "q3",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -183,8 +183,8 @@ export const carData: Car[] = [
   },
   {
     id: 7,
-    brandName: "Audi",
-    modelName: "Q5",
+    brandName: "audi",
+    modelName: "q5",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -213,8 +213,8 @@ export const carData: Car[] = [
   },
   {
     id: 8,
-    brandName: "Audi",
-    modelName: "Q8",
+    brandName: "audi",
+    modelName: "q8",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -243,8 +243,8 @@ export const carData: Car[] = [
   },
   {
     id: 9,
-    brandName: "Audi",
-    modelName: "RS3",
+    brandName: "audi",
+    modelName: "rs3",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -273,8 +273,8 @@ export const carData: Car[] = [
   },
   {
     id: 10,
-    brandName: "Audi",
-    modelName: "RS6",
+    brandName: "audi",
+    modelName: "rs6",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -303,7 +303,7 @@ export const carData: Car[] = [
   },
   {
     id: 11,
-    brandName: "BMW",
+    brandName: "bmw",
     modelName: "320",
     year: 2023,
     brandPoints: {
@@ -333,7 +333,7 @@ export const carData: Car[] = [
   },
   {
     id: 12,
-    brandName: "BMW",
+    brandName: "bmw",
     modelName: "420",
     year: 2023,
     brandPoints: {
@@ -363,7 +363,7 @@ export const carData: Car[] = [
   },
   {
     id: 13,
-    brandName: "BMW",
+    brandName: "bmw",
     modelName: "520",
     year: 2023,
     brandPoints: {
@@ -393,7 +393,7 @@ export const carData: Car[] = [
   },
   {
     id: 14,
-    brandName: "BMW",
+    brandName: "bmw",
     modelName: "i4",
     year: 2023,
     brandPoints: {
@@ -423,7 +423,7 @@ export const carData: Car[] = [
   },
   {
     id: 15,
-    brandName: "BMW",
+    brandName: "bmw",
     modelName: "X5",
     year: 2023,
     brandPoints: {
@@ -453,8 +453,8 @@ export const carData: Car[] = [
   },
   {
     id: 16,
-    brandName: "Honda",
-    modelName: "Accord",
+    brandName: "honda",
+    modelName: "accord",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -483,8 +483,8 @@ export const carData: Car[] = [
   },
   {
     id: 17,
-    brandName: "Honda",
-    modelName: "Civic",
+    brandName: "honda",
+    modelName: "civic",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -513,8 +513,8 @@ export const carData: Car[] = [
   },
   {
     id: 18,
-    brandName: "Honda",
-    modelName: "CR-V",
+    brandName: "honda",
+    modelName: "crv",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -543,8 +543,8 @@ export const carData: Car[] = [
   },
   {
     id: 19,
-    brandName: "Honda",
-    modelName: "Jazz",
+    brandName: "honda",
+    modelName: "jazz",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -573,8 +573,8 @@ export const carData: Car[] = [
   },
   {
     id: 20,
-    brandName: "Hyundai",
-    modelName: "Elantra",
+    brandName: "hyundai",
+    modelName: "elantra",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -603,7 +603,7 @@ export const carData: Car[] = [
   },
   {
     id: 21,
-    brandName: "Hyundai",
+    brandName: "hyundai",
     modelName: "i20",
     year: 2023,
     brandPoints: {
@@ -633,7 +633,7 @@ export const carData: Car[] = [
   },
   {
     id: 22,
-    brandName: "Hyundai",
+    brandName: "hyundai",
     modelName: "i30",
     year: 2023,
     brandPoints: {
@@ -663,8 +663,8 @@ export const carData: Car[] = [
   },
   {
     id: 23,
-    brandName: "Hyundai",
-    modelName: "IONIQ 5",
+    brandName: "hyundai",
+    modelName: "ioniq 5",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -693,8 +693,8 @@ export const carData: Car[] = [
   },
   {
     id: 24,
-    brandName: "Hyundai",
-    modelName: "Kona",
+    brandName: "hyundai",
+    modelName: "kona",
     year: 2023,
     brandPoints: {
       base: 10,
@@ -723,8 +723,8 @@ export const carData: Car[] = [
   },
   {
     id: 25,
-    brandName: "Hyundai",
-    modelName: "Tucson",
+    brandName: "hyundai",
+    modelName: "tucson",
     year: 2023,
     brandPoints: {
       base: 10,

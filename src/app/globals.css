@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Lexend:wght@100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -128,6 +130,27 @@
       #3b82f6 75%,
       #4f46e5 100%
     );
+    font-family: "Lexend Peta", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGradient 3s linear infinite;
+  }
+  .card-header {
+    @apply text-4xl font-bold relative;
+    background: linear-gradient(
+      90deg,
+      #4f46e5 0%,
+      #3b82f6 25%,
+      #0ea5e9 50%,
+      #3b82f6 75%,
+      #4f46e5 100%
+    );
+  
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;

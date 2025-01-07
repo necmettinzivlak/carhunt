@@ -5,7 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+          {/* Diğer meta etiketler */}
+          <link rel="icon" href="../public/logo.svg" type="image/svg+xml" />
         </Head>
         <body>
           <Main />
@@ -16,4 +17,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument;
+export default MyDocument; 

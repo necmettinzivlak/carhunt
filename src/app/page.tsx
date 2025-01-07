@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { useState, useEffect } from "react";
 import GameCard from "@/components/GameCard";
 import { carData } from "@/data/carData";
@@ -107,8 +108,7 @@ export default function Home() {
         <div className="container mx-auto py-6 px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="relative">
-              <h1 className="game-header">Araba Bulmaca</h1>
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-lg opacity-10 filter blur-xl"></div>
+              <h1 className="game-header text-5xl">CAR HUNT</h1>
             </div>
             <div className="flex gap-4 items-center">
               <button onClick={toggleTheme} className="text-xl">
@@ -136,7 +136,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8 dark:bg-gray-900 bg-white">
-        <div className="max-w-4xl mx-auto animate-slideIn">
+        <div className="max-w-[90vw] mx-auto animate-slideIn">
           {currentCar && (
             <GameCard
               carData={currentCar}
