@@ -223,7 +223,7 @@ export default function Home() {
                   {playerName}
                 </div>
                 <div className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-indigo-400 dark:to-sky-400 bg-clip-text text-transparent mb-2">
-                  {getScoreMessage(2000)}
+                  {getScoreMessage(score)}
                 </div>
                 <div className="text-xl text-gray-600 dark:text-gray-300 mb-4">
                   Final Skorun
